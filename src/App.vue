@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-// import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from "./components/HelloWorld.vue";
 import Timeline from "./components/Timeline.vue";
 // import { defineComponent } from "vue";
 
@@ -19,6 +19,7 @@ import Timeline from "./components/Timeline.vue";
 //     return { name };
 //   },
 // });
+
 // let name = "Batul";
 </script>
 
@@ -37,7 +38,12 @@ import Timeline from "./components/Timeline.vue";
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>-->
   <!-- </div> -->
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
+  <child
+    ><h1>slots</h1>
+    <h1>mona</h1>
+    <h1>hala</h1>
+  </child>
+  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <!-- <style scoped>

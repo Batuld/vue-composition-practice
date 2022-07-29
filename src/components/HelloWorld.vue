@@ -1,14 +1,29 @@
-<script setup lang="ts">
+<script lang="ts">
 import { ref } from "vue";
+import { computed } from "vue";
 
-defineProps<{ msg: string }>();
+// defineProps<{ msg: string }>();
 
-const count = ref(0);
+// const count = ref(0);
+
+export default {
+  props: {
+    msg: String,
+  },
+
+  setup(props: any) {
+    const msgComputed = computed(() => props.msg.toUpperCase());
+    return {
+      msgComputed,
+    };
+  },
+};
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-  <div class="card">
+  <slot></slot>
+  <!-- <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
@@ -27,7 +42,7 @@ const count = ref(0);
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
     in your IDE for a better DX
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p> -->
 </template>
 
 <style scoped>
